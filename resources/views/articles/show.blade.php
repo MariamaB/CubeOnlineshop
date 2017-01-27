@@ -3,13 +3,18 @@
 @section('content')
     <h1>{{ $article->name }}</h1>
 
-
-
     <div class="row">
-        <div class="col-sm-8">
+        <div id="preisdetail" class="col-sm-8">
             {!! $article->description !!}
             <hr>
-            {{ $article->price }}&nbsp;&bull;&nbsp;noch {{ $article->amount }}x verfügbar
+<div>
+
+            <h3><b>Preis </b><span class="label label-default"> {{ $article->price }} €</span></h3>
+            noch {{ $article->amount }} verfügbar
+<hr>
+     <br />
+    <button id="inWarenkorb" class="btn btn-primary" type="submit">In den Warenkorb</button>
+</div>
         </div>
 
         <div class="col-sm-4">
