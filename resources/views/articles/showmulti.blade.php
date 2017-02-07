@@ -7,7 +7,7 @@
             @foreach($row AS $item)
                 <div class="col-sm-3">
                     <div class="panel panel-default">
-                        <div class="panel-heading">{!! link_to_route('articles.show', $item->name, $item->id) !!}</div>
+                        <div class="panel-heading" style="background-color:#DBFF33;" >{!! link_to_route('articles.show', $item->name, $item->id) !!}</div>
                         <div class="panel-body">
                             <img class="img-responsive" src="{{ $item->file->url }}" alt="{{ $item->name }}">
                         </div>

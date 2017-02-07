@@ -9,7 +9,7 @@
         ]); ?>
     </script>
 </head>
-<body>
+<body >
   @include('includes.header')
   @include('includes.sidebar')
 <div id="content" class="container">

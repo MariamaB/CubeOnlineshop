@@ -1,7 +1,8 @@
 @extends('masters.master')
 
 @section('content')
-    <h1>{{ $category->name }}</h1>
+    <h1 style="text-align: center;">{{ $category->name }}</h1>
+    <hr>
 
     @forelse(array_chunk($category->articles->all(), 4) AS $row)
         <div class="row">
@@ -26,11 +27,10 @@
     @if(auth()->check())
         <hr>
         <a href="{{ route('categories.edit', $category->id) }}">Kategorie bearbeiten</a>
-        &nbsp;&bull;&nbsp;
+        &nbsp;&bull;&nbsp; <a href="{{ route('articles.create') }}">Artikel anlegen</a>
         {!! Form::open(['method'=>'delete', 'route'=>['categories.destroy', $category->id]]) !!}
         <input type="submit" value="Kategorie löschen"/>
         {!! Form::close() !!}
-        &nbsp;&bull;&nbsp;
-        <a href="{{ route('articles.create') }}">Artikel anlegen</a>
+
     @endif
 @endsection

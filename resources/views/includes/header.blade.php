@@ -1,32 +1,25 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
+<nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: #3385ff">
+    <div class="container" text="white">
         <div class="navbar-header">
             <a class="navbar-brand" href="{{ url('/') }}">
-                <img class="img-thumbnail" src="{{ asset('img/cube.png') }}" alt="../Products/cubeLogo2.jpg"/>
+                <img src="{{ asset('img/cube.png') }}" alt="../Products/cubeLogo2.jpg"/>
             </a>
         </div>
         <ul class="nav navbar-nav pull-left">
-            <li class="active"><a href="{{ url('/') }}">Home</a></li>
-            @if(auth()->check())<li><a href="{{ route('users.index') }}">Mitarbeiter</a></li>@endif
-
+            <li><a style="color: white"; href="{{ url('/') }}">Home</a></li>
+            @if(auth()->check())<li><a style="color: white"; href="{{ route('users.index') }}">Mitarbeiter</a></li>@endif
         </ul>
 
         <ul class="nav navbar-nav pull-center">
             @if(auth()->check())
-                <li><a href="#">Hallo Mitarbeiter {{ auth()->user()->name }}!</a></li>
+                <li><a style="color: white"; href="#">Hallo Mitarbeiter {{ auth()->user()->name }}!</a></li>
 
             @endif
         </ul>
 
-        {{--<form class="navbar-form navbar-right" role="search">--}}
-            {!! Form:: open (['route' => 'articles.search', 'method'=> 'GET' , 'class'=>"navbar-form navbar-right"]) !!}
-         {!! Form::text('term',Request::get('term'),['class'=> 'form-control', 'placeholder'=> 'Suche Produkt' ]) !!}
+        <ul class="nav navbar-nav pull-right">
+            <li class="next"><a style="color: white"; href="#"><strong>Cube INC.</strong></a></li>
+        </ul>
 
-            <button type="submit" class="btn btn-default">Suchen ohne Filter</button>
-</form>
-{!! Form::close() !!}
-
-
-
-</div>
+    </div>
 </nav>

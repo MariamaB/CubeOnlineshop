@@ -57,7 +57,7 @@ return [
 
     'from' => [
         'address' => 'onlineshopcube@gmail.com',
-        'name' => 'Cube',
+        'name' => 'Cube Online Shop',
     ],
 
     /*

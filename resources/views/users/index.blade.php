@@ -1,14 +1,15 @@
 @extends('masters.master')
 
 @section('content')
-    <h1>Mitarbeiter</h1>
+    <h1 style="text-align: center;">Mitarbeiter</h1>
+    <hr>
 
     <table class="table table-hover table-striped table-bordered">
         <thead>
             <tr>
                 <td>Name</td>
                 <td>E-Mail</td>
-                <td>Einladungscode</td>
+               {{-- <td>Einladungscode</td>--}}
                 <td colspan="2"></td>
             </tr>
         </thead>
@@ -17,8 +18,8 @@
                 <tr>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
-                    <td>{{ $user->invite_code }}</td>
-                    <td>{!! link_to_route('users.edit', $user->name.' bearbeiten', $user->id) !!}</td>
+                    {{--<td>{{ $user->invite_code }}</td>--}}
+                    {{--<td>{!! link_to_route('users.edit', $user->name.' bearbeiten', $user->id) !!}</td>--}}
                     <td>
                         {!! Form::open(['method'=>'delete', 'route'=>['users.destroy', $user->id]]) !!}
                         <input type="submit" value="Mitarbeiter löschen"/>
@@ -31,5 +32,5 @@
 
     <hr>
 
-    <a href="{{ route('users.create') }}">Benutzer anlegen</a>
+ {{--   <a href="{{ route('users.create') }}">Benutzer anlegen</a>--}}
 @endsection

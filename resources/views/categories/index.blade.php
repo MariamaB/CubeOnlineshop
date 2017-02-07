@@ -1,7 +1,8 @@
 @extends('masters.master')
 
 @section('content')
-    <h1>Kategorieübersicht</h1>
+    <h1 style="text-align:center;">Kategorieübersicht</h1>
+    <hr>
 
     @forelse(array_chunk($categories->all(), 4) AS $row)
         <div class="row">

@@ -1,10 +1,11 @@
 @extends('masters.master')
 
 @section('content')
-    <h1>{{ $article->name }}</h1>
+    <h1 style="text-align:center;">{{ $article->name }}</h1>
+    <hr>
 
     <div class="row">
-        <div id="preisdetail" class="col-sm-8">
+        <div id="preisdetail" class="col-md-6">
             {!! $article->description !!}
             <hr>
 <div>
@@ -17,8 +18,8 @@
 </div>
         </div>
 
-        <div class="col-sm-4">
-            <img class="img-responsive" src="{{ $article->file->url }}" alt="{{ $article->name }}">
+        <div>
+            <img id="img-responsive" class="col-md-5" src="{{ $article->file->url }}" alt="{{ $article->name }}">
         </div>
     </div>
 

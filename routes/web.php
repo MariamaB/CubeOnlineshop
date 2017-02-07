@@ -46,3 +46,7 @@ Route::get('/', ['uses'=>'CategoryController@index']);
 Route::get('/home', 'HomeController@index');
 Route::get('/profile/{id}', 'Profile\ProfileController@show');
 Route::get('/user/activation/{token}', 'Auth\LoginController@activateUser')->name('user.activate');
+
+Route::get('/termofservices', function() {
+    return view('termofservices.termofservice');
+});
