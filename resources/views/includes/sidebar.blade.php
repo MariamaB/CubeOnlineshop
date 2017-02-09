@@ -2,27 +2,27 @@
     <div id="mySidenav2">
 
         <h3><label id="searchLabel"><span class="label label-success">Suchen: </span></label></h3>
-        <form id="searchForm" >
-            {!! Form:: open (['route' => 'articles.filteredsearch', 'method'=> 'GET' , 'class'=>"navbar-form navbar-left"]) !!}
-            {!! Form::text('term',Request::get('term'),['class'=> 'form-control', 'placeholder'=> 'Search' ]) !!}
+        <div id="searchForm" >
+            {!! Form:: open (['route' => 'articles.search', 'method'=> 'GET' , 'class'=>"navbar-form navbar-left"]) !!}
+            {!! Form::text('term',Request::get('term'),['class'=> 'form-control', 'placeholder'=> 'Suchen' ]) !!}
             <button type="submit" class="btn btn-warning">Suchen</button>
             {!! Form::close() !!}
-        </form>
+        </div>
 
         <h3><label id="filterLabel"><span class="label label-success">Filtern: </span></label></h3>
-        <form id="filterForm" >
+        <div id="filterForm" >
             {!! Form:: open (['route' => 'articles.filteredsearch', 'method'=> 'GET' , 'class'=>"navbar-form navbar-left"]) !!}
             {!! Form::text('ab_price',Request::get('ab_price'),['class'=> 'form-control', 'placeholder'=> 'Preis ab €' ]) !!}
             {!! Form::text('bis_price',Request::get('bis_price'),['class'=> 'form-control', 'placeholder'=> 'Preis bis €' ]) !!}
             <button type="submit" class="btn btn-warning">Filtern</button>
             {!! Form::close() !!}
-        </form>
+        </div>
 
         <div class="col-lg-2">
             {{-- {!! Form::open (['route' =>  ['articles.shortby'], 'method'=> 'GET' , 'class'=>"navbar-form navbar-right"]) !!} --}}
             <div class="from-group">
                 <!-- <label for="">Sortierung</label> -->
-               <h3><label id="sortLabel"><span class="label label-success">Sortierung: </span></label></h3>
+                <h3><label id="sortLabel"><span class="label label-success">Sortierung: </span></label></h3>
                 <form>
                     <select id="sortFilter" class="form-control input-sm" name="sortieren">
                         <option value="asc_new">Neu</option>
@@ -35,7 +35,7 @@
                     </select>
                 {{--  <button type="submit" class="btn btn-default">Sortieren</button> --}}
             </div>
-            {{Form::close()}}
+            {{--{{Form::close()}}--}}
         </div>
 
     </div>
